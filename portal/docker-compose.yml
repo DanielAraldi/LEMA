@@ -1,0 +1,12 @@
+services:
+  hello:
+    container_name: portal
+    image: node:20.12
+    working_dir: /usr/src/portal
+    restart: always
+    command: bash -c "npm install && npm run start"
+    volumes:
+      - ./dist/:/usr/src/portal/dist/
+      - ./package.json:/usr/src/portal/package.json
+    ports:
+      - "8080:8080"
