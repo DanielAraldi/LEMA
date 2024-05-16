@@ -1,16 +1,14 @@
 # LEMA Univali
 
-An application to connect GeoNode, Portal, and Rocker Shiny servers using reverse proxy Nginx and Docker.
+Uma aplicação que conecta servidores GeoNode, Portal e Rocker Shiny usando a ferramenta de proxy reverso Nginx e Docker.
 
-### Development Flow
+### Fluxo de Desenvolvimento
 
-- [ ] The user requests to access something.
-> This request was made by the user who has headers to be worked by Nginx to redirect the user to the correct application.
-- [ ] Nginx will have `upstream` with all servers that will be used.
-> The headers values are going to decide the redirect using conditionals.
-- [ ] After that user is redirected to the correct server, the server gives a response to the user.
-- [ ] The user gets information given by the server and his made happy.
+- [ ] O usuário realiza a uma requisição para acessar algum serviço.
+- [ ] O Nginx terá `upstreams` com cada uma das URLs dos servidores.
+- [ ] Depois que o usuário ser redirecionado para o servidor correto, o servidor processa e da a resposta para o usuário.
+- [ ] O usuário recebe as informações vindas pelo servidor e ele fica feliz.
 
-### Diagram Flow
+### Diagrama de Fluxo
 
 ![image](https://github.com/DanielAraldi/oceanography/assets/50931267/625c6683-8494-4cf1-8b91-7e1eb3a2631d)
