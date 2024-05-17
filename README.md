@@ -11,4 +11,4 @@ Uma aplicação que conecta servidores GeoNode, Portal e Rocker Shiny usando a f
 
 ### Diagrama de Fluxo
 
-![image](https://github.com/DanielAraldi/oceanography/assets/50931267/625c6683-8494-4cf1-8b91-7e1eb3a2631d)
+![Diagrama de Fluxo](https://github.com/DanielAraldi/oceanography/assets/50931267/625c6683-8494-4cf1-8b91-7e1eb3a2631d)
