@@ -8,6 +8,15 @@ Este é o projeto Portal. Um projeto de apresentação ao usuário, voltado a we
   npm i # ou npm install
 ```
 
+## Sobre o `.env`
+
+Você deve criá-lo como uma cópia do arquivo `.env.example`, esses são seus argumentos por padrão:
+
+```txt
+HOST=localhost
+PORT=8080
+```
+
 ## Como executar?
 
 ```bash
