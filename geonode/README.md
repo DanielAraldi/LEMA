@@ -10,7 +10,7 @@ Este é o projeto GeoNode. Gerado a partir de um projeto `django` com suporte ao
 
   pip install Django==3.2.13
 
-  cd LEMA/geonode
+  cd ./geonode
   python create-envfile.py --env_type=test --geonodepwd=abc123 --geoserverpwd=abc123 --pgpwd=postgres --dbpwd=geonode --geodbpwd=geonode
 ```
 
