@@ -1,0 +1,8 @@
+services:
+  shiny-server:
+    container_name: shiny-server
+    image: rocker/shiny:4
+    working_dir: /usr/src/shiny-server
+    restart: always
+    ports:
+      - "3838:3838"
