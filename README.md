@@ -18,3 +18,4 @@ Uma aplicação que conecta servidores GeoNode, Portal e Rocker Shiny usando a f
 - [GeoNode](./geonode/README.md)
 - [Nginx](./nginx/README.md)
 - [Portal](./portal/README.md)
+- [Rocker Shiny](./rocker-shiny/README.md)

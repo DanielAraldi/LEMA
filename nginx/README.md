@@ -7,3 +7,5 @@ Este é o projeto Nginx. Um proxy reverso que será usado para gerenciar o acess
 ```bash
   docker compose up -d
 ```
+
+> Certifique-se que você está dentro da pasta `nginx`.

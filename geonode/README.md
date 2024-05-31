@@ -14,6 +14,8 @@ Este é o projeto GeoNode. Gerado a partir de um projeto `django` com suporte ao
   python create-envfile.py --env_type=test --geonodepwd=abc123 --geoserverpwd=abc123 --pgpwd=postgres --dbpwd=geonode --geodbpwd=geonode
 ```
 
+> Certifique-se que você está na raiz do projeto.
+
 ### Sobre o `create-envfile.py`
 
 O `create-envfile.py` aceita os seguintes argumentos:
@@ -33,9 +35,13 @@ O `create-envfile.py` aceita os seguintes argumentos:
 - `--clientid`: ID do cliente GeoNode `Oauth2` do GeoServer servidor. Um valor aleatório é dado, caso o valor não seja informado ou seja limpo.
 - `--clientsecret`: A `secret` do cliente GeoNode `Oauth2` do GeoServer servidor. Um valor aleatório é dado, caso o valor não seja informado ou seja limpo.
 
+> Certifique-se que você está dentro da pasta `geonode`.
+
 ## Como executar?
 
 ```bash
   docker compose build
   docker compose up -d
 ```
+
+> Certifique-se que você está dentro da pasta `geonode`.
