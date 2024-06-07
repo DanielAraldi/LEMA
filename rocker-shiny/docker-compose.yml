@@ -1,4 +1,22 @@
 services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    ports:
+      - "82:82"
+      - "444:444"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+
+  certbot:
+    container_name: certbot
+    image: certbot/certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+
   shiny-server:
     container_name: shiny-server
     image: rocker/shiny:4
