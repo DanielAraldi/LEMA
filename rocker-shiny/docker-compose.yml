@@ -2,20 +2,11 @@ services:
   nginx:
     container_name: nginx
     image: nginx:latest
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
-      - "82:82"
-      - "444:444"
-    volumes:
-      - ./nginx:/etc/nginx/conf.d
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-
-  certbot:
-    container_name: certbot
-    image: certbot/certbot
-    volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
+      - "81:81"
 
   shiny-server:
     container_name: shiny-server
