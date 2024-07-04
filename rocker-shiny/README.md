@@ -4,18 +4,9 @@ Este é o projeto Rocker Shiny. Um servidor Shiny para aplicações feitas em `R
 
 ## Como preparar o ambiente (Produção)?
 
-Primeiro vamos executar o projeto no Docker que está no servidor.
-
-```bash
-  cd /home/projects/LEMA/rocker-shiny
-  docker build -t shiny-server .
-  docker-compose up -d
-
-  cd /etc/nginx/sites-available
-  nano rocker-shiny
-```
-
 ### Instalação do Docker e definição de usuário:
+
+> Faça esta etapa caso o Docker não esteja instalado no servidor.
 
 ```bash
   sudo mkdir -p /etc/apt/keyrings
@@ -31,14 +22,25 @@ Primeiro vamos executar o projeto no Docker que está no servidor.
   su ${USER}
 ```
 
-### Instalação do Docker
+### Instalação do Nginx
 
 ```bash
   sudo apt update
   sudo apt install nginx
 ```
 
-### Adicionar configurações Nginx:
+Agora, vamos executar o projeto no Docker que está no servidor.
+
+```bash
+  cd /home/projects/LEMA/rocker-shiny
+  docker build -t shiny-server .
+  docker-compose up -d
+
+  cd /etc/nginx/sites-available
+  nano rocker-shiny
+```
+
+### Adicionar configurações Nginx no arquivo `rocker-shiny`
 
 ```conf
   # This is Nginx configuration for Rocker Shiny.
@@ -55,6 +57,16 @@ Primeiro vamos executar o projeto no Docker que está no servidor.
       proxy_pass http://localhost:3838;
     }
   }
+```
+
+### Adicionar configurações Nginx para que fiquem habilitadas no servidor
+
+```bash
+  cd /etc/nginx/sites-enabled
+  rm rocker-shiny # Remove o arquivo `rocker-shiny`, caso ele já exista na pasta `sites-enabled`.
+  sudo ln -s /etc/nginx/sites-available/rocker-shiny /etc/nginx/sites-enabled/ # Copia o arquivo `rocker-shiny` para a pasta de `sites-enabled`.
+  cd .. && nginx -t # Testa as configurações Nginx para garantir que elas estão corretas.
+  sudo systemctl reload nginx # Dá um restart no serviço de Nginx para garantir que ele observe as novas alterações.
 ```
 
 ## Como preparar o ambiente (Local)?
