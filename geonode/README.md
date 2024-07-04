@@ -17,6 +17,8 @@ Está etapa só **deve ser realizada** caso a sua máquina/servidor tenha o GeoN
 
 ### Instalação do Docker e definição de usuário:
 
+> Faça esta etapa caso o Docker não esteja instalado no servidor.
+
 ```bash
   sudo mkdir -p /etc/apt/keyrings
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -32,6 +34,8 @@ Está etapa só **deve ser realizada** caso a sua máquina/servidor tenha o GeoN
 ```
 
 ### Instalação do PostgreSQL e PostGis:
+
+> Faça esta etapa caso o PostgreSQL ou PostGis não esteja instalado no servidor.
 
 ```bash
   sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
